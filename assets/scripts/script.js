@@ -1,6 +1,7 @@
 // Configurações iniciais
 const SHEET_ID = '1g_uwMSpHnKaiBbJB66EMeh3vg5nY95LQENLFBMT22OA';
 const SHEET_RANGE = 'Respostas ao formulário 1';
+const GOOGLE_API_KEY = 'AIzaSyB5xusUGM3Kn4yPLubbSEMURp2AC3L9SIU';
 
 const generateBtn = document.getElementById("generateBtn");
 const briefingsDiv = document.getElementById("briefings");
