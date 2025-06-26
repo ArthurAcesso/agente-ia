@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar anúncio</title>
+    <link rel="stylesheet" href="../styles/anuncio.css">
+</head>
+
+<body>
+
+    <a href="/index.html">
+        <img src="../img/logo acesso.png" alt="logo" id="logo">
+    </a>
+
+    <h1>Integração com Meta ADS</h1>
+
+    <div>
+        <label for="idConta">Digite o ID da sua conta Meta ADS:</label>
+        <input type="text" id="idConta" required>
+        <button id="enviarBtn">Enviar ID</button>
+    </div>
+
+    <div id="loading">Carregando dados, por favor aguarde...</div>
+
+    <div id="results">
+        <h2>Resultados</h2>
+        <div id="campaignsContainer"></div>
+        <div id="adsetsContainer"></div>
+    </div>
+
+    <script src="../scripts/anuncio.js"></script>
+</body>
+
+</html>
