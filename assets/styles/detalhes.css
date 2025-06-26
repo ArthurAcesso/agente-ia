@@ -199,7 +199,101 @@ button#generateBtn:active {
   border-color: var(--primary-color);
 }
 
+/* Styling for the form itself */
+#formCampanha {
+  background-color: var(--bg-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  margin: var(--spacing-xl) auto;
+  max-width: 600px; /* Limit form width for better readability */
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
 
+/* Styling for labels */
+#formCampanha label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+/* Styling for text, number, and file inputs, and textareas */
+#formCampanha input[type="text"],
+#formCampanha input[type="number"],
+#formCampanha input[type="file"],
+#formCampanha textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition-fast);
+  background-color: var(--bg-light);
+  color: var(--text-medium);
+}
+
+/* Focus styles for inputs and textareas */
+#formCampanha input:focus,
+#formCampanha textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+  background-color: var(--bg-white);
+}
+
+/* Styling for the file input */
+#formCampanha input[type="file"] {
+  padding: var(--spacing-md);
+  border: 1px dashed var(--border-color); /* Dashed border for file input */
+  background-color: var(--bg-light);
+  cursor: pointer;
+}
+
+#formCampanha input[type="file"]:hover {
+  border-color: var(--primary-color);
+}
+
+/* Styling for the submit button */
+#formCampanha button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: var(--spacing-lg);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  align-self: flex-end; /* Align button to the right */
+}
+
+#formCampanha button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+#formCampanha button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Briefing textarea specific styles */
+#briefingCliente {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 120px; /* Minimum height for better appearance */
+}
+
+/* Spacing adjustments for specific elements within the form */
+#formCampanha br {
+  display: none; /* Remove default <br> spacing */
+}
 
 
 @keyframes rotateAnimation {
