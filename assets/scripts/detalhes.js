@@ -5,6 +5,7 @@ const SHEET_ID = '1g_uwMSpHnKaiBbJB66EMeh3vg5nY95LQENLFBMT22OA'; // planilha ond
 const SHEET_RANGE = 'Respostas ao formulário 1';
 const ACCESS_TOKEN = 'EAATSMRltA1IBO5v3sxw7nWkzpHtHVFkig6uYtNgz1oTA5J1vqNS8kj0ivaZB9IZByZBxSiuOyTu7VuXZC830Av8wmZAqrK28uNNk1rVSkRmiMp2oxcdBZCoIkJ0AyKyAbatq9HlUgnFIlR0qOhIopJpHZAZCRtP2Li0l6GruIK8CYzZB0YZBxt0DZBZA';
 const META_API_VERSION = 'v19.0';
+const GOOGLE_API_KEY = 'AIzaSyB5xusUGM3Kn4yPLubbSEMURp2AC3L9SIU';
 
 let AD_ACCOUNT_ID = null;
 
