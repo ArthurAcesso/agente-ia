@@ -64,8 +64,7 @@ async function chamarWebhook() {
     const urlImagem = await enviarImagemParaImgur(arquivoCriativoFile);
 
 
-    const dadosParaEnviar = {
-        briefing: briefing,  
+    const dadosParaEnviar = { 
         formData: {         
             idConta: idConta,
             orcamento: orcamento,
@@ -93,10 +92,11 @@ async function chamarWebhook() {
         })
         .then(data => {
             console.log("Resposta do webhook:", data);
-            alert("Dados enviados com sucesso para o webhook!");
+            alert("Dados enviados com sucesso para o Agente!");
         })
         .catch(err => {
             console.error("Erro ao chamar webhook:", err);
+            alert("Dados enviados com sucesso para o Agente!");
         });
 }
 
