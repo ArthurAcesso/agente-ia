@@ -53,6 +53,14 @@ img {
     width: auto;
 }
 
+a {
+    padding: 10px;
+    background-color: #163173;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
 /* Container principal */
 #briefings {
     display: grid;
