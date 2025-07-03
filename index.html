@@ -1,27 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
-  <title>Teste de Campanha com ChatGPT</title>
-  <link rel="stylesheet" href="assets/styles/style.css">
-</head>
-<body>
+  <title>Detalhes do Briefing</title>
+  <link rel="stylesheet" href="assets/styles/detalhes.css">
+  <style>
+    /* Add this style block for centering the title and subtitle */
+    .header-content {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-  <a href="index.html">
+    .header-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 5px;
+    }
+
+    .header-content h2 {
+      font-size: 1.2em;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="/index.html">
     <img src="assets/img/logo acesso.png" alt="logo">
   </a>
 
-  <h1>Gestor de Tráfego IA</h1>
-  <p>Selecione um briefing para gerar sugestão com <strong>inteligência artifical</strong></p>
+  <div class="header-content">
+    <h1>Agente IA</h1>
+    <h2>Um agente de inteligência artificial especializado em Meta Ads</h2>
+  </div>
 
-  <input type="text" id="searchInput" placeholder="Pesquisar briefing..." />
+  <div class="search-bar-container">
+    <input type="text" id="filtroContas" placeholder="Pesquisar contas por nome ou ID...">
+  </div>
 
-  <p>Caso o cliente não tenha preenchido um briefing: <a href="assets/pages/sembriefing.html">Clique aqui</a></p>
+  <div id="tokenInputContainer">
+    <label for="userToken">Cole seu Token de Acesso da Meta aqui:</label><br>
+    <input type="text" id="userToken" size="80" placeholder="EAAI... (Cole seu token completo aqui)"><br><br>
+    <button id="saveTokenButton">Salvar Token</button>
+  </div>
 
-  <div id="briefings"></div>
+  <div class="ad-accounts-container" id="accountsContainer">
+    <p id="loadingMessage" class="message">Carregando contas de anúncios...</p>
+  </div>
 
-  <div id="resultado"></div>
+  <div id="containerFormulario"></div>
 
-  <script src="assets/scripts/script.js"></script>
+  <div class="ad-option" id="criarNovaCampanha"></div>
+
+  <div id="pergunta-upload"></div>
+  <div id="backgroundBlur" class="background-blur"></div>
+
+  <div id="briefingGeneratorModal" class="modal-overlay" style="display:none;">
+    <div class="modal-content">
+      <span class="close-button" id="closeBriefingModalBtn">&times;</span>
+      <h1>Criar Briefing com Inteligência Artificial</h1>
+      <p>Preencha os dados do cliente para gerar um briefing automaticamente:</p>
+
+      <form id="aiBriefingForm">
+        <label for="aiClientName">Nome do Cliente:</label><br>
+        <input type="text" id="aiClientName" name="clientName" required><br><br>
+
+        <label for="aiCampaignGoal">Objetivo da Campanha:</label><br>
+        <textarea id="aiCampaignGoal" name="campaignGoal" rows="5" required></textarea><br><br>
+
+        <label for="aiMonthlyBudget">Orçamento Total Mensal:</label><br>
+        <input type="number" id="aiMonthlyBudget" name="monthlyBudget" step="0.01" required><br><br>
+
+        <label for="aiTargetAudience">Público-Alvo / ICP:</label><br>
+        <textarea id="aiTargetAudience" name="targetAudience" rows="5" required></textarea><br><br>
+
+        <label for="aiMainServices">Serviços Principais:</label><br>
+        <input type="text" id="aiMainServices" name="mainServices" required><br><br>
+
+        <label for="aiCompanyDifferentials">Principais Diferenciais da Empresa:</label><br>
+        <textarea id="aiCompanyDifferentials" name="companyDifferentials" rows="3"></textarea><br><br>
+
+        <label for="aiCompanyWebsite">Site da Empresa:</label><br>
+        <input type="url" id="aiCompanyWebsite" name="companyWebsite"><br><br>
+
+        <label for="aiCompanyInstagram">Instagram da Empresa:</label><br>
+        <input type="url" id="aiCompanyInstagram" name="companyInstagram"><br><br>
+
+        <label for="aiCampaignGeographicArea">Área Geográfica das Campanhas:</label><br>
+        <input type="text" id="aiCampaignGeographicArea" name="campaignGeographicArea"><br><br>
+
+        <label for="aiOtherObservations">Outras Observações da Empresa (opcional):</label><br>
+        <textarea id="aiOtherObservations" name="otherObservations" rows="5"></textarea><br><br>
+
+        <button type="submit" id="aiGenerateBriefingBtn">Gerar Briefing com IA</button>
+      </form>
+
+      <div id="aiLoadingIndicator" style="display:none;">
+        <div class="spinner"></div>
+        <p>Gerando briefing... Por favor, aguarde.</p>
+      </div>
+
+      <div id="aiGeneratedBriefing" style="display:none;">
+        <h2>Briefing Gerado:</h2>
+        <textarea id="aiBriefingOutput" rows="25" readonly></textarea>
+        <button id="aiCopyBriefingBtn" class="copy-btn">Copiar Briefing</button>
+        <button id="useGeneratedBriefingBtn" class="btn-use-briefing">Usar Este Briefing</button>
+      </div>
+    </div>
+  </div>
+  <script src="assets/scripts/sembriefing.js"></script>
 </body>
+
 </html>

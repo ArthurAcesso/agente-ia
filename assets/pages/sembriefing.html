@@ -12,15 +12,28 @@
     <img src="../img/logo acesso.png" alt="logo">
   </a>
 
-    <div class="ad-option">
-      <button class="option-btn" id="criarNovaCampanha">Criar campanha</button> 
-    </div>
+  <input type="text" id="filtroContas" placeholder="Pesquisar contas por nome ou ID..." style="margin-bottom: 10px; padding: 5px; width: 100%;">
 
-    <div id="containerFormulario"></div>
 
-    <div id="pergunta-upload"></div>
-    <!-- Camada de desfoque -->
-    <div id="backgroundBlur" class="background-blur"></div>
+  <div id="tokenInputContainer">
+    <label for="userToken">Cole seu Token de Acesso da Meta aqui:</label><br>
+    <input type="text" id="userToken" size="80" placeholder="EAAI... (Cole seu token completo aqui)"><br><br>
+    <button id="saveTokenButton">Salvar Token</button>
+  </div>
+
+  <div class="ad-accounts-container" id="accountsContainer">
+    <p id="loadingMessage" class="message">Carregando contas de anúncios...</p>
+  </div>
+
+  <div id="containerFormulario"></div>
+
+  <div class="ad-option" id="criarNovaCampanha"></div>
+
+
+
+  <div id="pergunta-upload"></div>
+  <!-- Camada de desfoque -->
+  <div id="backgroundBlur" class="background-blur"></div>
 
   </div>
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+   
+  <meta charset="UTF-8">
+    <title>Gerar Briefing com IA</title>
+   
+  <link rel="stylesheet" href="../styles/style.css">
+   
+  <link rel="stylesheet" href="../styles/iaBriefing.css">
+   
+</head>
+
+<body>
+
+    <a href="../../index.html">
+        <img src="../img/logo acesso.png" alt="logo">
+      </a>
+
+    <h1>Criar Briefing com Inteligência Artificial</h1>
+    <p>Preencha os dados do cliente para gerar um briefing automaticamente:</p>
+
+    <form id="briefingForm">
+        <label for="clientName">Nome do Cliente:</label><br>
+        <input type="text" id="clientName" name="clientName" required><br><br>
+
+        <label for="campaignGoal">Objetivo da Campanha:</label><br>
+        <textarea id="campaignGoal" name="campaignGoal" rows="5" required></textarea><br><br>
+
+        <label for="monthlyBudget">Orçamento Total Mensal:</label><br>
+        <input type="number" id="monthlyBudget" name="monthlyBudget" step="0.01" required><br><br>
+
+        <label for="targetAudience">Público-Alvo / ICP:</label><br>
+        <textarea id="targetAudience" name="targetAudience" rows="5" required></textarea><br><br>
+
+        <label for="mainServices">Serviços Principais:</label><br>
+        <input type="text" id="mainServices" name="mainServices" required><br><br>
+
+        <label for="companyDifferentials">Principais Diferenciais da Empresa:</label><br>
+        <textarea id="companyDifferentials" name="companyDifferentials" rows="3"></textarea><br><br>
+
+        <label for="companyWebsite">Site da Empresa:</label><br>
+        <input type="url" id="companyWebsite" name="companyWebsite"><br><br>
+
+        <label for="companyInstagram">Instagram da Empresa:</label><br>
+        <input type="url" id="companyInstagram" name="companyInstagram"><br><br>
+
+        <label for="campaignGeographicArea">Área Geográfica das Campanhas:</label><br>
+        <input type="text" id="campaignGeographicArea" name="campaignGeographicArea"><br><br>
+
+        <label for="otherObservations">Outras Observações da Empresa (opcional):</label><br>
+        <textarea id="otherObservations" name="otherObservations" rows="5"></textarea><br><br>
+
+        <button type="submit" id="generateBriefingBtn">Gerar Briefing com IA</button>
+      </form>
+
+    <div id="loadingIndicator" style="display:none;">
+        <div class="spinner"></div>
+        <p>Gerando briefing... Por favor, aguarde.</p>
+      </div>
+
+    <div id="generatedBriefing" style="display:none;">
+        <h2>Briefing Gerado:</h2>
+        <textarea id="briefingOutput" rows="25" readonly></textarea>
+        <button id="copyBriefingBtn" class="copy-btn">Copiar Briefing</button>
+      </div>
+
+   
+  <script src="../scripts/briefing-analista.js"></script>
+</body>
+
+</html>

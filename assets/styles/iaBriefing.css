@@ -1,0 +1,253 @@
+/* --- Styling for briefing-analista.html elements --- */
+
+/* General form styling */
+#briefingForm {
+    width: 90%;
+    max-width: 700px;
+    /* Adjust max-width as needed */
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+#briefingForm label {
+    font-size: 1rem;
+    color: var(--text-light);
+    display: block;
+    font-weight: 500;
+}
+
+/* Input fields and Textareas */
+#briefingForm input,
+#briefingForm textarea {
+    width: calc(100% - (2 * var(--spacing-sm)));
+    /* Adjust width for padding */
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--bg-darker);
+    /* Darker background for input fields */
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: var(--transition-fast);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+    /* Subtle inner shadow */
+    resize: vertical;
+    /* Allow vertical resizing for textareas */
+    line-height: 1.5;
+}
+
+#briefingForm input[type="text"]:focus,
+#briefingForm textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue-light);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Placeholder styling */
+#briefingForm input::placeholder,
+#briefingForm textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* Button styling (reusing #generateBtn styles for consistency) */
+#briefingForm button[type="submit"] {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    font-size: 1.1rem;
+    margin-top: var(--spacing-lg);
+    /* Space above the button */
+    align-self: center;
+    /* Center the button in the form */
+    box-shadow: var(--shadow-sm);
+    width: auto;
+    /* Allow button to size content */
+    min-width: 200px;
+    /* Ensures a minimum width */
+}
+
+#briefingForm button[type="submit"]:hover {
+    background-color: var(--primary-blue-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Generated Briefing Result Area */
+#generatedBriefing {
+    background-color: var(--bg-card);
+    color: var(--text-light);
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    width: 90%;
+    max-width: 900px;
+    border-left: 4px solid var(--primary-blue);
+    font-family: 'Fira Code', monospace;
+    /* Keep consistent with #resultado */
+    white-space: pre-wrap;
+    /* Preserve formatting from generated text */
+    text-align: left;
+    /* Ensure text alignment is natural */
+    line-height: 1.6;
+}
+
+#generatedBriefing h2 {
+    color: var(--primary-blue-light);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#briefingOutput {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #briefingForm {
+        padding: var(--spacing-md);
+        width: calc(100% - (2 * var(--spacing-md)));
+        /* Adjust for body padding */
+    }
+
+    #briefingForm input[type="text"],
+    #briefingForm textarea {
+        width: calc(100% - (2 * var(--spacing-sm)));
+        /* Maintain padding inside input */
+    }
+
+    #briefingForm button[type="submit"] {
+        width: 100%;
+        /* Full width button on smaller screens */
+        min-width: unset;
+    }
+
+    #generatedBriefing {
+        width: calc(100% - (2 * var(--spacing-md)));
+        /* Adjust for body padding */
+        padding: var(--spacing-md);
+    }
+}
+
+/* Spinner para carregamento */
+#loadingIndicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--spacing-xl);
+    color: var(--text-muted);
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid var(--primary-blue-light);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin-bottom: var(--spacing-sm);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilo para o botão de copiar */
+.copy-btn {
+    background-color: var(--primary-blue-light);
+    /* Uma cor diferente para se destacar */
+    color: white;
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-md);
+    /* Espaçamento acima do botão */
+    align-self: flex-end;
+    /* Alinha o botão à direita dentro do generatedBriefing */
+}
+
+.copy-btn:hover {
+    background-color: var(--primary-blue);
+    /* Volta para o azul primário no hover */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Estilo para o textarea do briefing gerado */
+#briefingOutput {
+    width: calc(100% - (2 * var(--spacing-sm)));
+    /* Ajuste para o padding */
+    min-height: 300px;
+    /* Altura mínima para visualização */
+    background-color: var(--bg-darker);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-light);
+    font-size: 0.95rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    line-height: 1.5;
+    transition: var(--transition-fast);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+    resize: vertical;
+    font-family: 'Fira Code', monospace;
+    /* Manter a fonte monospace */
+}
+
+#briefingOutput:focus {
+    outline: none;
+    border-color: var(--primary-blue-light);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes para o #generatedBriefing para alinhar o botão */
+#generatedBriefing {
+    display: flex;
+    /* Torna-o um flex container */
+    flex-direction: column;
+    /* Organiza os itens em coluna */
+    align-items: flex-start;
+    /* Alinha itens ao início (esquerda) */
+}
+
+#generatedBriefing h2 {
+    width: 100%;
+    /* Garante que o H2 ocupe a largura total */
+}
+
+/* Isso sobrescreve o align-self do copy-btn para alinhar à direita */
+#copyBriefingBtn {
+    align-self: flex-end;
+    /* Alinha o botão de copiar à direita */
+}

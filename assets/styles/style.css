@@ -248,3 +248,35 @@ a {
         --bg-card: #121212;
     }
 }
+
+#ai-briefing-plugin {
+  position: fixed;
+  top: var(--spacing-md); /* Usando variável para espaçamento */
+  right: 50px; /* Usando variável para espaçamento */
+  z-index: 1000;
+  cursor: pointer;
+  background-color: var(--primary-blue); /* Cor de fundo azul primário */
+  border-radius: 50%;
+  padding: var(--spacing-xs); /* Menor padding para um visual mais compacto */
+  box-shadow: var(--shadow-md); /* Sombra média para destaque */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast); /* Adiciona transição para hover */
+  border: 1px solid var(--primary-blue-light); /* Borda sutil */
+}
+
+#ai-briefing-plugin img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 50%;
+}
+
+#ai-briefing-plugin:hover {
+  background-color: var(--primary-blue-hover); /* Cor de hover do azul primário */
+  transform: translateY(-2px); /* Efeito de levitação sutil */
+  box-shadow: var(--shadow-lg); /* Sombra maior no hover */
+  border-color: var(--text-light); /* Borda mais clara no hover */
+}
+
