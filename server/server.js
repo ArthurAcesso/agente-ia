@@ -246,5 +246,4 @@ app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
     console.log('OpenAI token:', process.env.OPENAI_API_KEY ? 'OK' : 'Missing');
     console.log('Google Sheets token:', process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS ? 'OK' : 'Missing');
-    console.log('Resolved path for credentials:', path.resolve(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS || 'credentials.json'));
 });

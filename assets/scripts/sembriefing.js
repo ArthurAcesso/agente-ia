@@ -1,5 +1,14 @@
 let paginasDisponiveis = [];
 
+const briefingGeneratorModal = document.getElementById('briefingGeneratorModal');
+const aiBriefingForm = document.getElementById('aiBriefingForm');
+const aiGeneratedBriefingDiv = document.getElementById('aiGeneratedBriefing');
+const aiBriefingOutputTextarea = document.getElementById('aiBriefingOutput');
+const aiLoadingIndicator = document.getElementById('aiLoadingIndicator');
+const aiGenerateBriefingBtn = document.getElementById('aiGenerateBriefingBtn');
+const aiCopyBriefingBtn = document.getElementById('aiCopyBriefingBtn');
+const useGeneratedBriefingBtn = document.getElementById('useGeneratedBriefingBtn');
+
 // Inicializa o sistema e configura eventos
 async function initialize() {
   displayAdAccounts();
