@@ -53,7 +53,7 @@ initialize();
 // ===================================================
 async function listarTodasContasDeAnuncios() {
   try {
-    const response = await fetch('http://localhost:3001/api/meta/full-info');
+    const response = await fetch('/api/meta/full-info');
     const result = await response.json();
 
     // Aqui está a forma correta de extrair os dados
@@ -164,7 +164,7 @@ async function prepararCriacaoCampanha(account) {
 
   if (account.tipo !== 'direct') {
     try {
-      const res = await fetch(`http://localhost:3001/api/meta/owned-pages/${account.business_manager_id}`);
+      const res = await fetch(`/api/meta/owned-pages/${account.business_manager_id}`);
       if (!res.ok) throw new Error('Erro na requisição de páginas');
       paginasDaConta = await res.json();
     } catch (e) {
@@ -373,7 +373,7 @@ Formate tudo utilizando Markdown (**negrito**, listas com '-', subtítulos com '
 
 
   try {
-    const response = await fetch('http://localhost:3001/api/gerar-briefing', {
+    const response = await fetch('/api/gerar-briefing', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -460,7 +460,7 @@ async function chamarWebhook() {
 
     };
 
-    const response = await fetch("http://localhost:3001/api/enviar-webhook", {
+    const response = await fetch("/api/enviar-webhook", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dadosParaEnviar)
